@@ -1,0 +1,26 @@
+{
+  "name": "SimpleJournal",
+  "version": "1.0.0",
+  "description": "A simple journal using express and mongoose.",
+  "main": "index.js",
+  "scripts": {
+    "test": "jest"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/july2m3/SimpleJournal.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/july2m3/SimpleJournal/issues"
+  },
+  "homepage": "https://github.com/july2m3/SimpleJournal#readme",
+  "dependencies": {
+    "express": "^4.17.1",
+    "jest": "^25.5.4",
+    "mongodb": "^3.5.7",
+    "mongoose": "^5.9.11"
+  }
+}
