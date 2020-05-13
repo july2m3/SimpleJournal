@@ -1,0 +1,27 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  height: 100vh;
+  color: white;
+  font-family: 'Oswald', sans-serif;
+}
+
+body {
+  /* min-height: 100%; */
+  background: url('./bg1.jpeg');
+  background-size: cover;
+}
+
+.app {
+  border: 1px solid white;
+  margin: 40px auto;
+  padding: 20px;
+  height: 80vh;
+  width: 80%;
+  overflow: auto;
+  text-align: center;
+}
