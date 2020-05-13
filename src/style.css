@@ -24,4 +24,19 @@ body {
   width: 80%;
   overflow: auto;
   text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.buttons {
+  display: flex;
+  justify-content: space-evenly;
+}
+
+.buttons button {
+  background-color: black;
+  color: white;
+  padding: 20px;
+  border-radius: 5px;
 }
