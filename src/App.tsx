@@ -23,12 +23,15 @@ class App extends React.Component<Props, State> {
     };
   }
 
-  switchDayTime = (e: any) => {
-    console.log(e);
-    console.log(e.target);
-    console.log(e.target.value);
+  switchMorning = (e: any) => {
     this.setState((prevState) => ({
-      isMorning: !prevState.isMorning,
+      isMorning: true,
+    }));
+  };
+
+  switchNight = (e: any) => {
+    this.setState((prevState) => ({
+      isMorning: false,
     }));
   };
 
@@ -41,10 +44,10 @@ class App extends React.Component<Props, State> {
         {!this.state.isMorning && <Night />}
 
         <div className="buttons">
-          <button className="morning-button" onClick={this.switchDayTime}>
+          <button className="morning-button" onClick={this.switchMorning}>
             Morning
           </button>
-          <button className="night-button" onClick={this.switchDayTime}>
+          <button className="night-button" onClick={this.switchNight}>
             Night
           </button>
         </div>
