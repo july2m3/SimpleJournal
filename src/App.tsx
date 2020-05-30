@@ -2,55 +2,36 @@ import React from 'react';
 
 import './style.css';
 
-const Morning = () => {
-  return <h1>morning</h1>;
-};
+import journalEntries from './journal-info.json';
 
-const Night = () => {
-  return <h1>night</h1>;
-};
+import LeftBar from './components/LeftBar';
+import JournalEntry from './components/JournalEntry';
 
-interface Props {}
-interface State {
-  isMorning: Boolean;
+interface IProps {}
+interface IState {
+  data: any;
 }
-
-class App extends React.Component<Props, State> {
-  constructor(props: any) {
+class App extends React.Component<IProps, IState> {
+  constructor(props: IProps) {
     super(props);
     this.state = {
-      isMorning: true,
+      data: '',
     };
   }
 
-  switchMorning = (e: any) => {
-    this.setState((prevState) => ({
-      isMorning: true,
+  componentDidMount() {
+    this.setState(() => ({
+      data: journalEntries,
     }));
-  };
-
-  switchNight = (e: any) => {
-    this.setState((prevState) => ({
-      isMorning: false,
-    }));
-  };
+  }
 
   render() {
+    const { data } = this.state;
     return (
       <div className="app">
-        <h1>Simple Journal</h1>
-
-        {this.state.isMorning && <Morning />}
-        {!this.state.isMorning && <Night />}
-
-        <div className="buttons">
-          <button className="morning-button" onClick={this.switchMorning}>
-            Morning
-          </button>
-          <button className="night-button" onClick={this.switchNight}>
-            Night
-          </button>
-        </div>
+        <h1 className="title">Simple Journal</h1>
+        <LeftBar />
+        {data && <JournalEntry entries={data} />}
       </div>
     );
   }
